@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import login as auth_login, authenticate, get_user_model
 from django.urls import reverse
 
-from .forms import LoginForm
+from .forms import LoginForm, RegisterForm
 
 def login(request):
     # if request is a HTTP POST try to pull out the relevant information
@@ -24,3 +24,7 @@ def login(request):
         login_form = LoginForm()
 
     return render(request, 'accounts/login.html', {'login_form': login_form,})
+
+def register(request):
+    register_form = RegisterForm()
+    return render(request, 'accounts/register.html', {'register_form': register_form})

@@ -30,3 +30,31 @@ class LoginForm(forms.Form):
                 raise forms.ValidationError("Vérifier votre email ou contacter le service technique. Votre compte est désactivé")
 
         return super(LoginForm, self).clean()
+
+class RegisterForm(forms.ModelForm):
+    """A form for creating new users. Includes all the required
+    fields, plus a repeated password."""
+    password1 = forms.CharField(label='Mot de passe', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Confirmation du mot de passe', widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+
+    def clean_password2(self):
+        # check that the two password entries match
+        password1 = self.cleaned_data.get("password1")
+        password2 = self.cleaned_data.get("password2")
+
+        if password1 and password2 and password1 != password2:
+            raise forms.ValidationError("Les mots de passes ne correspondent pas")
+        return password2
+
+    def save(self, commit=True):
+        # save the provided password in hashed format
+        user = super(RegisterForm, self).save(commit=False)
+        user.set_password(self.cleaned_data["password1"])
+        user.is_active = True # send confirmation email
+        if commit:
+            user.save()
+        return user
