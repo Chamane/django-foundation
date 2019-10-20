@@ -1,3 +1,8 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
-# urlpatterns = []
+from .views import login
+
+urlpatterns = [
+    path('', login, name="login"),
+]
