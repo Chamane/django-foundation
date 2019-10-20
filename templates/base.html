@@ -7,13 +7,33 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% block title %}Django Skeleton{% endblock title %}</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="icon" href="{% static 'img/favicon/django.jpg' %}" type="image/jpg">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   {% block head %}
   {% endblock head %}
 </head>
 <body>
-  {% block content %}{% endblock %}
+  {% block content %}
+    {% block navbar %}
+      <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">Django Foundation</a>
+        {% if user.is_authenticated %}
+          <div class="ml-auto">
+            <i class="material-icons">person</i>
+          </div>
+        {% else %}
+          <div class="auth-button ml-auto">
+            <a href="{% url 'register' %}" class="btn btn-primary">s'inscrire</a>
+            <a href="{% url 'login' %}" class="btn btn-warning">connecter</a>
+          </div>
+        {% endif %}
+      </nav>
+    {% endblock navbar %}
+    {% block page_content %}
+    {% endblock page_content %}
+  {% endblock %}
 
   {% include 'misc/footer.html' %}
   <script src="{% static 'js/jquery.min.js' %}"></script>

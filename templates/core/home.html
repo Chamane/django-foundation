@@ -1,8 +1,43 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
+{% block head %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+{% endblock head %}
+
+{% block page_content %}
   <div class="container">
-    <h1 class='font-weight-bold mt-5'>Django Skeleton 0.1.0</h1>
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-10 col-lg-8">
+        <div class="card mt-5" style="position:relative;">
+          <a class="github-fork-ribbon" href="https://github.com/Chamane/django-foundation" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+          <div class="card-header text-center">
+            <h1 class="card-title">Django Foundation</h1>
+          </div>
+          <div class="card-body">
+            <div class="container">
+              <p>
+                Django Foundation est une structure de projet Django, basé
+                sur Python 3 et Django 2. Il a été crée dans le
+                souci de développement rapide qui se veut un ensemble de configurations,
+                de fonctionnalités déjà implémentées comme l'authentification,
+                des recettes pour la sécurité, le <i>project layout</i>, les dépendences et
+                différentes recettes pour le dépoiement
+              </p>
+              <p>
+                <a href="https://www.dokla.ht"><strong>DOKLA</strong></a> (plateforme de e-santé) utilise comme fondation Django Foundation.</br>
+                Vous pouvez aussi aller regarder <a href="https://stackshare.io/dokla/dokla">le stack de dokla</a> pour voir comment ledit
+                projet a étendu les fonctionnalités de bases offertes par Django Foundation.
+              </p>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <small class="text-muted">
+              &copy; Créé par Servius Madsen
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-{% endblock content %}
+{% endblock page_content %}
