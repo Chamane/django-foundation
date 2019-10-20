@@ -1,0 +1,5 @@
+-r requirements.txt
+
+coverage==4.5.4
+django-debug-toolbar==2.0
+sphinx==2.2.0

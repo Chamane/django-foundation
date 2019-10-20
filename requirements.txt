@@ -1,0 +1,13 @@
+# implicit dependencies
+sqlparse==0.3.0
+
+# explicit dependencies
+Django==2.2.4
+psycopg2==2.8.3
+django-user-agents==0.4.0
+easy-thumbnails==2.6
+Pillow==6.1.0
+PyYAML==5.1.2
+ua-parser==0.8.0
+user-agents==2.0
+django-crispy-forms==1.7.2
