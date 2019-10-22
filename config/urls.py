@@ -7,3 +7,6 @@ urlpatterns = [
     #path('pages/', include('apps.pages.urls')),
     path('', include('apps.core.urls')),
 ]
+
+handler404 = apps.pages.handler404
+handler500 = apps.pages.handler500
