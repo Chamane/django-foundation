@@ -22,7 +22,11 @@ def get_secret(setting, secrets=secrets):
     """
 
     if secrets is None:
-        return None
+        secrets = {
+            "PASSWORD": "password1234",
+            "HOST": "127.0.0.1",
+            "PORT": "5431"
+        }
 
     try:
         return secrets[setting]
