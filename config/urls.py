@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, handler404, handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -8,5 +8,5 @@ urlpatterns = [
     path('', include('apps.core.urls')),
 ]
 
-handler404 = apps.pages.handler404
-handler500 = apps.pages.handler500
+handler404 = 'apps.pages.handler404'
+handler500 = 'apps.pages.handler500'
