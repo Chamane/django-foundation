@@ -13,6 +13,7 @@ try:
  with open('secrets.json') as f:
      secrets = json.loads(f.read())
 except IOError:
+    secrets = None
     print("Peut pas ouvrir le fichier secrets.json")
 
 def get_secret(setting, secrets=secrets):
