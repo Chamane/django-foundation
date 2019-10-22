@@ -1,4 +1,3 @@
-import json
 from pathlib import Path
 from os.path import join
 
@@ -7,41 +6,6 @@ from django.core.exceptions import ImproperlyConfigured
 PROJECT_PACKAGE_DIR = Path(__file__).resolve().parent.parent
 
 BASE_DIR = str(PROJECT_PACKAGE_DIR.parent)
-
-# JSON Based secret module
-try:
- with open('secrets.json') as f:
-     secrets = json.loads(f.read())
-except IOError:
-    secrets = {
-        "SECRET_KEY": "i@jsve73%ywmq@spe%li-bp_eh9_#69ar*8lm0ca1lrk1&ld9s",
-        "PASSWORD": "password1234",
-        "DATABASES_HOST": "127.0.0.1",
-        "PORT": "5431"
-    }
-    print("Peut pas ouvrir le fichier secrets.json utilise des valeurs par défaut")
-
-def get_secret(setting, secrets=secrets):
-    """Get the secret variable or return
-       explicit exception
-    """
-
-    try:
-        return secrets[setting]
-    except KeyError:
-        error_msg = "Set the {0} environement variable".format(setting)
-        raise ImproperlyConfigured(error_msg)
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'oribase',
-        'USER': 'postgres',
-        'PASSWORD': get_secret("PASSWORD"),
-        'HOST': get_secret("DATABASES_HOST"),
-        'PORT': get_secret("PORT"),
-    }
-}
 
 LANGUAGE_CODE = 'en-us'
 
