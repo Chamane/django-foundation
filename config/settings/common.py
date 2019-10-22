@@ -14,11 +14,12 @@ try:
      secrets = json.loads(f.read())
 except IOError:
     secrets = {
+        "SECRET_KEY": "i@jsve73%ywmq@spe%li-bp_eh9_#69ar*8lm0ca1lrk1&ld9s"
         "PASSWORD": "password1234",
         "DATABASES_HOST": "127.0.0.1",
         "PORT": "5431"
     }
-    print("Peut pas ouvrir le fichier secrets.json utilise des valuers par défaut")
+    print("Peut pas ouvrir le fichier secrets.json utilise des valeurs par défaut")
 
 def get_secret(setting, secrets=secrets):
     """Get the secret variable or return
