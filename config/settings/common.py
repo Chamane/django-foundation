@@ -15,7 +15,7 @@ try:
 except IOError:
     secrets = {
         "PASSWORD": "password1234",
-        "HOST": "127.0.0.1",
+        "DATABASES_HOST": "127.0.0.1",
         "PORT": "5431"
     }
     print("Peut pas ouvrir le fichier secrets.json utilise des valuers par défaut")
