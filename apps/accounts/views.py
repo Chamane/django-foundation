@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login, authenticate, get_user_model
 from django.urls import reverse
 
@@ -25,6 +25,18 @@ def login(request):
 
     return render(request, 'accounts/login.html', {'login_form': login_form,})
 
+
 def register(request):
-    register_form = RegisterForm()
-    return render(request, 'accounts/register.html', {'register_form': register_form})
+    if request.method == 'POST':
+        register_form = RegisterForm(request.POST)
+        if register_form.is_valid(): # TODO: add recaptcha validation
+            user = register_form.save()
+            auth_login(request, user)
+            return redirect(reverse('home'))
+    else:
+        register_form = RegisterForm()
+
+    return render(
+        request, 'accounts/register.html',
+        {'register_form': register_form}
+    )
