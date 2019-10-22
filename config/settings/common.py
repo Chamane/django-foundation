@@ -21,6 +21,9 @@ def get_secret(setting, secrets=secrets):
        explicit exception
     """
 
+    if secrets is None:
+        return None
+
     try:
         return secrets[setting]
     except KeyError:
