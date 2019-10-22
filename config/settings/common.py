@@ -158,3 +158,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 USER_AGENTS_CACHE = None
 
 AUTH_USER_MODEL = "accounts.User"
+
+LOGOUT_REDIRECT_URL = "home"
