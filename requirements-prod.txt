@@ -1,1 +1,3 @@
 -r requirements.txt
+
+django-heroku==0.3.1
