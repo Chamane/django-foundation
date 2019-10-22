@@ -36,3 +36,34 @@ Un puissant kit de démarrage
       	```
         pip install virtualenwrapper-win
         ```
+  3. Cloner le repo de django-foundation sur votre ordinateur.
+
+     > l'outil git est requis
+
+     ```
+     git clone https://github.com/chamane/django-foundation
+     ```
+
+  4. Configurez un environnement isolé python pour travailler
+
+      Ouvrez le terminal sur votre ordinateur et saisissez:
+
+      ```
+      mkvirtualenv myEnv
+      ```
+
+  5. Installez les dépendances de django-foundation.
+
+      Ouvrez le terminal et déplacez vous dans le répertoire de django-foundation
+      sur votre ordinateur. Ensuite placez vous dans l'environnement créé plutôt grace a ceci:
+      ```
+      workon myEnv
+      ```
+
+      et maintenant vous pouvez installer les dépendances du projet qui se trouve déja
+      dans les requirements.
+
+      ```
+      pip install -r requirements-dev.txt
+      ```
+   6. Installez PostgreSQL sur votre ordinateur. 
