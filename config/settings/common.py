@@ -52,7 +52,7 @@ STATICFILES_DIRS = [
 ]
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_secret('SECRET_KEY')
+SECRET_KEY = 'i@jsve73%ywmq@spe%li-bp_eh9_#69ar*8lm0ca1lrk1&ld9s'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
