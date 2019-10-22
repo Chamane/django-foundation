@@ -2,7 +2,7 @@ from .common import *
 
 import django_heroku
 
-#import dj_database_url
+import dj_database_url
 
 django_heroku.settings(locals())
 
