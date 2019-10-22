@@ -133,3 +133,12 @@ USER_AGENTS_CACHE = None
 AUTH_USER_MODEL = "accounts.User"
 
 LOGOUT_REDIRECT_URL = "home"
+
+
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
+sentry_sdk.init(
+    dsn="https://1367c10fdbf946d1a3146d847d2bb34d@sentry.io/1792688",
+    integrations=[DjangoIntegration()]
+)
