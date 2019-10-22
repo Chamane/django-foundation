@@ -13,20 +13,17 @@ try:
  with open('secrets.json') as f:
      secrets = json.loads(f.read())
 except IOError:
-    secrets = None
-    print("Peut pas ouvrir le fichier secrets.json")
+    secrets = {
+        "PASSWORD": "password1234",
+        "HOST": "127.0.0.1",
+        "PORT": "5431"
+    }
+    print("Peut pas ouvrir le fichier secrets.json utilise des valuers par défaut")
 
 def get_secret(setting, secrets=secrets):
     """Get the secret variable or return
        explicit exception
     """
-
-    if secrets is None:
-        secrets = {
-            "PASSWORD": "password1234",
-            "HOST": "127.0.0.1",
-            "PORT": "5431"
-        }
 
     try:
         return secrets[setting]
