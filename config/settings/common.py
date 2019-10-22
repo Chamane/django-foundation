@@ -9,8 +9,11 @@ PROJECT_PACKAGE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = str(PROJECT_PACKAGE_DIR.parent)
 
 # JSON Based secret module
-with open('secrets.json') as f:
-    secrets = json.loads(f.read())
+try:
+ with open('secrets.json') as f:
+     secrets = json.loads(f.read())
+except IOError:
+    print("Peut pas ouvrir le fichier secrets.json")
 
 def get_secret(setting, secrets=secrets):
     """Get the secret variable or return
