@@ -20,19 +20,19 @@ Un puissant kit de démarrage
   2. Une fois Python 3 et pip installé il vous faut avoir un outil pour créer des
     environnements python isolés. Nous allons utiliser virtualenv et virtualenwrapper.
 
-    Ouvrez votre terminal et executez ces commandes:
+      Ouvrez votre terminal et executez ces commandes:
 
-      ```shell
+        ```
         pip install virtualenv
-      ```
-    Une fois virtualenv installé, vous devez installer virtualenvwrapper, si vous
-    êtes sur Linux la commande est:
+        ```
+      Une fois virtualenv installé, vous devez installer virtualenvwrapper, si vous
+      êtes sur Linux la commande est:
 
-      ```shell
-      pip install virtualenvwrapper
-      ```
-    si vous êtes sur windows vous devez saisir:
+        ```
+        pip install virtualenvwrapper
+        ```
+      si vous êtes sur windows vous devez saisir:
 
-      	```shell
+      	```
         pip install virtualenwrapper-win
         ```
