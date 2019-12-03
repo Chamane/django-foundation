@@ -1,0 +1,33 @@
+{
+  "name": "django-foundation",
+  "version": "1.0.0",
+  "description": "Un puissant kit de démarrage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chamane/django-foundation.git"
+  },
+  "author": "Madsen Servius",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chamane/django-foundation/issues"
+  },
+  "homepage": "https://github.com/Chamane/django-foundation#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.3",
+    "browser-sync": "^2.26.7",
+    "browsersync": "0.0.1-security",
+    "cssnano": "^4.1.10",
+    "gulp-concat": "^2.6.1",
+    "gulp-merge": "^0.1.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "postcss-cli": "^6.1.3"
+  },
+  "dependencies": {}
+}
