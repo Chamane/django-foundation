@@ -2,7 +2,7 @@
 sqlparse==0.3.0
 
 # explicit dependencies
-Django==2.2.13
+Django==2.2.18
 psycopg2==2.8.3
 django-user-agents==0.4.0
 easy-thumbnails==2.6
